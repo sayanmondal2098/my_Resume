@@ -148,7 +148,7 @@
                 window.location = url;
             } else {
                 seconds--;
-                document.getElementById("pageInfo").innerHTML = "redirect after " + seconds + " seconds."
+                document.getElementById("pageInfo").innerHTML = "redirect after " + getTimeRemaining(endtime).total/1000 + " seconds."
                 setTimeout("redirect()", 1000)
             }
         }
