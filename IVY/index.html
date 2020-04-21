@@ -101,7 +101,7 @@
                 secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
                 // totalspan.innerHTML = ("redirect after " + t.total + " seconds.");
                 console.log(t)
-                // document.getElementById('pageInfo').innerHTML = "Redirect after " + t.total/1000 + " seconds";
+                document.getElementById('pageInfo').innerHTML = "Redirect after " + t.total/1000 + " seconds";
                 var url = "https://sayanmondal2098.github.io/IVY/index3.html";
                 function redirect(time) {
                     if (time <= 0) {
@@ -117,7 +117,7 @@
             updateClock();
             var timeinterval = setInterval(updateClock, 1000);
         }
-        var deadline = new Date("April 21, 2020 21:58:00");
+        var deadline = new Date("April 21, 2020 22:00:00");
         initializeClock('clockdiv', deadline);
 
     </script>
