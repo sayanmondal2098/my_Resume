@@ -67,7 +67,6 @@
     <br>
     <div id="pageInfo">
         <p>TEST</p>
-    
     </div>
     <script language="JavaScript" type="text/javascript">
 
@@ -84,7 +83,6 @@
                 'minutes': minutes,
                 'seconds': seconds
             };
-            
         }
 
         function initializeClock(id, endtime) {
@@ -97,7 +95,6 @@
 
             function updateClock() {
                 var t = getTimeRemaining(endtime);
-
                 daysSpan.innerHTML = t.days;
                 hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
                 minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
@@ -117,19 +114,12 @@
                     redirect(t.total);
                 }
             }
-
             updateClock();
             var timeinterval = setInterval(updateClock, 1000);
         }
-
         var deadline = new Date("April 27, 2020 00:00:00");
         initializeClock('clockdiv', deadline);
 
-
-        // var countDownDate = new Date("April 21, 2020 20:05:00").getTime();
     </script>
 </head>
-
-
-
 </html>
