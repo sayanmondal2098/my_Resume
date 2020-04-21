@@ -63,6 +63,12 @@
             <div class="smalltext">Seconds</div>
         </div>
     </div>
+    <br>
+    <br>
+    <div id="pageInfo">
+        <p>TEST</p>
+    
+    </div>
     <script language="JavaScript" type="text/javascript">
 
         function getTimeRemaining(endtime) {
@@ -78,7 +84,7 @@
                 'minutes': minutes,
                 'seconds': seconds
             };
-            // console.log(t.toString)
+            
         }
 
         function initializeClock(id, endtime) {
@@ -87,6 +93,7 @@
             var hoursSpan = clock.querySelector('.hours');
             var minutesSpan = clock.querySelector('.minutes');
             var secondsSpan = clock.querySelector('.seconds');
+            var totalspan = document.getElementById("pageInfo")
 
             function updateClock() {
                 var t = getTimeRemaining(endtime);
@@ -95,9 +102,9 @@
                 hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
                 minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
                 secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-                document.getElementById("pageInfo").innerHTML = "redirect after " + t.total/1000 + " seconds."
-                // setTimeout("redirect()", 1000)
+                // totalspan.innerHTML = ("redirect after " + t.total + " seconds.");
                 console.log(t)
+                document.getElementById('pageInfo').innerHTML = "Redirect after " + t.total/1000 + " seconds";
                 var url = "https://sayanmondal2098.github.io/IVY/index3.html";
 
                 function redirect(time) {
@@ -109,8 +116,6 @@
                 if (t.total <= 0) {
                     clearInterval(timeinterval);
                     redirect(t.total);
-                }else{
-                    setTimeout(updateClock(),1000);
                 }
             }
 
@@ -122,49 +127,10 @@
         initializeClock('clockdiv', deadline);
 
 
-        var countDownDate = new Date("April 21, 2020 20:05:00").getTime();
-
-        // Update the count down every 1 second
-        var x = setInterval(function () {
-
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Display the result in the element with id="demo"
-            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
-        })
-        var seconds = setInterval();
-        var url = "https://sayanmondal2098.github.io/IVY/index3.html";
-
-        function redirect() {
-            if (seconds <= 0) {
-                // redirect to new url after counter  down.
-                window.location = url;
-            } else {
-                seconds--;
-                document.getElementById("pageInfo").innerHTML = "redirect after " + getTimeRemaining(endtime).total/1000 + " seconds."
-                setTimeout("redirect()", 1000)
-            }
-        }
+        // var countDownDate = new Date("April 21, 2020 20:05:00").getTime();
     </script>
 </head>
 
 
-<div id="pageInfo">
-    <script>
-        redirect();
-    </script>
-
-</div>
 
 </html>
